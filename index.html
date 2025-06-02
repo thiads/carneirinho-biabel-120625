@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Para Minha Nega ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
-  <sTYLE>* {
+  <sTYLE>* 
+  {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -232,11 +233,45 @@ button:hover {
     opacity: 0;
   }
 }
-
+ #welcomeScreen {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #fff; /* branco neutro */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+    }
+    #welcomeScreen button {
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      border: 1px solid #333;
+      background: #309700;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    #welcomeScreen button:hover {
+      background-color: #ddd;
+    }
+    #mainContent {
+      display: none;
+    }
 </STYLE> 
 </head>
  
 <body>
+   <div id="welcomeScreen">
+    <button id="enterBtn">Clique para continuar</button>
+  </div>
+
+  <div id="mainContent">
+    <!-- Seu conteúdo do site vai aqui -->
+    <h1>Conteúdo secreto</h1>
+  </div>
+
 <div id="coracoes"></div>
   <h1>❤️ Para minha nega, menina-mulher, princesa, sereia, fada. Minha Beatriz ❤️</h1>
 
@@ -448,11 +483,18 @@ function iniciarCoracoes() {
   setInterval(criarCoracao, 150);
 }
  var senha = prompt("Digite a senha para acessar:");
-  if (senha !== "pix2025") {
+  if (senha !== "2025") {
     alert("Senha incorreta!");
     document.body.innerHTML = "";
   }
-    
+    const enterBtn = document.getElementById('enterBtn');
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    const mainContent = document.getElementById('mainContent');
+
+    enterBtn.addEventListener('click', () => {
+      welcomeScreen.style.display = 'none';
+      mainContent.style.display = 'block';
+    }); 
 </script>
 
 
