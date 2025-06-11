@@ -1,241 +1,256 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Para Minha Nega ❤️</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
-  <sTYLE>* 
-  {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* Centralização geral */
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-  overflow-x: hidden;
-}
-h1 {
-  text-align: center;
-  color: #f88ca1;
-  text-shadow: 2px 2px #fff;
-  margin-bottom: 20px;
-  font-size: 1.5em;
-}
+    /* Centralização geral */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      overflow-x: hidden;
+    }
 
-h1::before,
-h1::after {
-  content: "❤️";
-  margin: 0 10px;
-}
+    h1 {
+    font-family: 'Dancing Script', cursive;
+      text-align: center;
+      color: #f88ca1;
+      text-shadow: 2px 2px #fff;
+      margin-bottom: 20px;
+      font-size: 2.5em;
+    }
 
-#carrossel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 10px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.5);
-  padding: 10px;
-  width: 90%;
-  max-width: 320px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+    h1::before,
+    h1::after {
+      content: "❤️";
+      margin: 0 10px;
+    }
 
-#carrossel img {
-  width: 160px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  scroll-snap-align: center;
-}
+    #carrossel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 10px;
+      width: 90%;
+      max-width: 320px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-/* Botões e elementos gerais */
-button {
-  background: #ff4d6d;
-  color: white;
-  border: none;
-  padding: 15px 25px;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
-  margin: 10px auto;
-  display: block;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-button:hover {
-  transform: scale(1.05);
-}
+    #carrossel img {
+      width: 160px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      scroll-snap-align: center;
+    }
 
-#btn-coracao {
-  animation: pulsar 1s infinite;
-}
+    /* Botões e elementos gerais */
+    button {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px auto;
+      display: block;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
 
-@keyframes pulsar {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-}
+    button:hover {
+      transform: scale(1.05);
+    }
 
-#caixa-amor {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  background: rgba(248, 140, 161, 0.9);
-  color: #fff;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  width: 90%;
-  max-width: 320px;
-  margin: 20px auto;
-  text-align: center;
-}
-.mensagem-amor {
-  font-size: 1.5em;
-  font-weight: bold;
-  text-shadow: 1px 1px #000;
-}
-/* Barra de amor estilizada */
-#barra-amor-container {
-  width: 90%;
-  margin: 20px auto;
-  position: relative;
-  text-align: center;
-}
-.barra-indicadores {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  font-size: 18px;
-  color: #ff4d6d;
-  font-weight: bold;
-}
-#barra-amor {
-  height: 30px;
-  background: linear-gradient(90deg, #ff6b6b, #ffb6b9, #ff6b6b);
-  border-radius: 50px;
-  transition: width 0.3s ease;
-  width: 0;
-}
-#barra-amor::before {
-  
-  position: absolute;
-  left: 10px;
-  top: -25px;
-  font-size: 14px;
-  color: #ff4d6d;
-  font-weight: bold;
-}
+    #btn-coracao {
+      animation: pulsar 1s infinite;
+    }
 
-.texto-apoio {
-  font-style: italic;
-  font-size: 1em;
-}
-#cronometro {
-  background: rgba(255,255,255,0.2);
-  padding: 15px;
-  border-radius: 15px;
-  font-size: 1.2em;
-  font-weight: bold;
-  width: 100%;
-}
+    @keyframes pulsar {
+      0%,
+      100% {
+        transform: scale(1);
+      }
 
-/* Cronômetro estilizado */
-#tempo-beijo {
-  display: inline-block;
-  background: #fff0f5;
-  border: 2px dashed #ff4d6d;
-  border-radius: 20px;
-  padding: 15px 20px;
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
-  color: #ff4d6d;
-  margin-top: 20px;
-}
+      50% {
+        transform: scale(1.2);
+      }
+    }
 
+    #caixa-amor {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      background: rgba(248, 140, 161, 0.9);
+      color: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 320px;
+      margin: 20px auto;
+      text-align: center;
+    }
 
-/* Carta decorada */
-#carta {
-  display: none;
-  max-width: 90%;
-  margin: 20px auto;
-  padding: 20px;
-  background: #fff0f5;
-  border: 2px solid #ff4d6d;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(255, 0, 100, 0.3);
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  text-align: center;
-  color: #ff4d6d;
-}
+    .mensagem-amor {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-shadow: 1px 1px #000;
+    }
 
-#carta::before {
-  content: "💌";
-  font-size: 2em;
-  display: block;
-  margin-bottom: 10px;
-}
+    /* Barra de amor estilizada */
+    #barra-amor-container {
+      width: 90%;
+      margin: 20px auto;
+      position: relative;
+      text-align: center;
+    }
 
-#mensagem-presente {
-  display: none;
-  margin-top: 10px;
-  background: rgba(255,255,255,0.8);
-  padding: 15px;
-  border-radius: 15px;
-  font-weight: bold;
-  text-align: center;
-  color: #5a3e36;
-}
+    .barra-indicadores {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      font-size: 18px;
+      color: #ff4d6d;
+      font-weight: bold;
+    }
 
-#coracoes {
-  position: fixed;
-  top: 0; 
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Não atrapalha cliques */
-  z-index: -1; /* Fica atrás de tudo */
-  overflow: hidden;
-}
+    #barra-amor {
+      height: 30px;
+      background: linear-gradient(90deg, #ff6b6b, #ffb6b9, #ff6b6b);
+      border-radius: 50px;
+      transition: width 0.3s ease;
+      width: 0;
+    }
 
-.coração {
-  position: absolute;
-  top: -10px;
-  animation: cair linear forwards;
-  opacity: 0.8;
-}
-@keyframes cair {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(120vh); /* Cobre além do viewport */
-    opacity: 0;
-  }
-}
- #welcomeScreen {
+    #barra-amor::before {
+      position: absolute;
+      left: 10px;
+      top: -25px;
+      font-size: 14px;
+      color: #ff4d6d;
+      font-weight: bold;
+    }
+
+    .texto-apoio {
+      font-style: italic;
+      font-size: 1em;
+    }
+
+    #cronometro {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      border-radius: 15px;
+      font-size: 1.2em;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    /* Cronômetro estilizado */
+    #tempo-beijo {
+      display: inline-block;
+      background: #fff0f5;
+      border: 2px dashed #ff4d6d;
+      border-radius: 20px;
+      padding: 15px 20px;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      color: #ff4d6d;
+      margin-top: 20px;
+    }
+
+    /* Carta decorada */
+    #carta {
+      display: none;
+      max-width: 90%;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff0f5;
+      border: 2px solid #ff4d6d;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 0, 100, 0.3);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      color: #ff4d6d;
+    }
+
+    #carta::before {
+      content: "💌";
+      font-size: 2em;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    #mensagem-presente {
+      display: none;
+      margin-top: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 15px;
+      border-radius: 15px;
+      font-weight: bold;
+      text-align: center;
+      color: #5a3e36;
+    }
+
+    #coracoes {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Não atrapalha cliques */
+      z-index: -1; /* Fica atrás de tudo */
+      overflow: hidden;
+    }
+
+    .coração {
+      position: absolute;
+      top: -10px;
+      animation: cair linear forwards;
+      opacity: 0.8;
+    }
+
+    @keyframes cair {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(120vh); /* Cobre além do viewport */
+        opacity: 0;
+      }
+    }
+
+    #welcomeScreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: #fff; /* branco neutro */
       display: flex;
       justify-content: center;
@@ -244,6 +259,7 @@ button:hover {
       flex-direction: column;
       font-family: Arial, sans-serif;
     }
+
     #welcomeScreen button {
       padding: 12px 25px;
       font-size: 16px;
@@ -253,68 +269,71 @@ button:hover {
       border-radius: 4px;
       transition: background-color 0.3s ease;
     }
+
     #welcomeScreen button:hover {
       background-color: #ddd;
     }
+
     #mainContent {
       display: none;
     }
-</STYLE> 
+  </style>
 </head>
- 
 <body>
-   <div id="welcomeScreen">
-    <button id="enterBtn">Clique para continuar</button>
-  </div>
+  <!-- Conteúdo da página -->
+</body>
+<div id="welcomeScreen">
+  <button id="enterBtn">Clique para continuar</button>
+</div>
 
-  <div id="mainContent">
-    <!-- Seu conteúdo do site vai aqui -->
-    <h1>Conteúdo secreto</h1>
-  </div>
+<div id="mainContent">
+  <!-- Seu conteúdo do site vai aqui -->
+  <h1>Conteúdo secreto</h1>
+</div>
 
 <div id="coracoes"></div>
-  <h1>❤️ Para minha nega, menina-mulher, princesa, sereia, fada. Minha Beatriz ❤️</h1>
 
-  <!-- Container do carrossel vertical -->
-  <section id="carrossel" tabindex="0" aria-label="Galeria de fotos do casal">
-    <img src="foto1.jpeg" alt="Foto do casal 1">
-    <img src="foto2.jpeg" alt="Foto do casal 2">
-    <img src="foto3.jpeg" alt="Foto do casal 3">
-    <img src="foto4.jpeg" alt="Foto do casal 4">
-    <img src="foto5.jpeg" alt="Foto do casal 5">
-    <img src="foto6.jpeg" alt="Foto do casal 6">
-    <img src="foto7.jpeg" alt="Foto do casal 7">
-    <img src="foto8.jpeg" alt="Foto do casal 8">
-    <img src="foto9.jpeg" alt="Foto do casal 9">
-    <img src="foto10.jpeg" alt="Foto do casal 10">
-  </section>
+<h1>❤️ Para minha nega, menina-mulher, princesa, sereia, fada. Minha Beatriz ❤️</h1>
 
-  <!-- Botão para tocar/pausar música -->
-  <button id="btn-musica" aria-label="Tocar ou pausar música" aria-pressed="false">Aperta, nega!</button>
+<!-- Container do carrossel vertical -->
+<section id="carrossel" tabindex="0" aria-label="Galeria de fotos do casal">
+  <img src="foto1.jpeg" alt="Foto do casal 1">
+  <img src="foto2.jpeg" alt="Foto do casal 2">
+  <img src="foto3.jpeg" alt="Foto do casal 3">
+  <img src="foto4.jpeg" alt="Foto do casal 4">
+  <img src="foto5.jpeg" alt="Foto do casal 5">
+  <img src="foto6.jpeg" alt="Foto do casal 6">
+  <img src="foto7.jpeg" alt="Foto do casal 7">
+  <img src="foto8.jpeg" alt="Foto do casal 8">
+  <img src="foto9.jpeg" alt="Foto do casal 9">
+  <img src="foto10.jpeg" alt="Foto do casal 10">
+</section>
 
-  <!-- Áudio romântico -->
-  <audio id="musica">
-    <source src="musica1.mp3.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio.
-  </audio>
+<!-- Botão para tocar/pausar música -->
+<button id="btn-musica" aria-label="Tocar ou pausar música" aria-pressed="false">Aperta, nega!</button>
 
-  <!-- Botão de coração pulsante -->
-  <button id="btn-coracao" aria-label="Mostrar mensagem de amor" aria-pressed="false">❤️</button>
+<!-- Áudio romântico -->
+<audio id="musica">
+  <source src="musica1.mp3.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio.
+</audio>
 
-  <!-- Caixinha do amor -->
-  <div id="caixa-amor">
+<!-- Botão de coração pulsante -->
+<button id="btn-coracao" aria-label="Mostrar mensagem de amor" aria-pressed="false">❤️</button>
+
+<!-- Caixinha do amor -->
+<div id="caixa-amor">
   <p class="mensagem-amor">❤️ AI LOVE IU TUMATE ❤️</p>
-  
   <button id="btn-medidor">Clique para ver quanto te amo</button>
-  
+
   <div id="barra-amor-container">
-  <div class="barra-indicadores">
-    <span>0 😢</span>
-    <span>∞ 😍</span>
+    <div class="barra-indicadores">
+      <span>0 😢</span>
+      <span>∞ 😍</span>
+    </div>
+    <div id="barra-amor"></div>
   </div>
-  <div id="barra-amor"></div>
-</div>
-  
+
   <p class="texto-apoio">Desse tantin 🤏</p>
 
   <div id="cronometro">
@@ -325,99 +344,100 @@ button:hover {
   <button id="fechar-amor">Fechar</button>
 </div>
 
-  <!-- Botão da carta -->
-  <button id="btn-cartinha" aria-label="Mostrar ou esconder carta virtual" aria-pressed="false">📩 Caixinha da Cartinha</button>
+<!-- Botão da carta -->
+<button id="btn-cartinha" aria-label="Mostrar ou esconder carta virtual" aria-pressed="false">📩 Caixinha da Cartinha</button>
 
-  <!-- Carta virtual -->
-  <div id="carta" aria-live="polite" aria-label="Carta virtual com poema de amor">
+<!-- Carta virtual -->
+<div id="carta" aria-live="polite" aria-label="Carta virtual com poema de amor">
   <p>Você já deve saber o valor que tem no mundo:</p>
 
-  <p>Um pedaço de paraíso deixado por Deus na Terra<br>
-  Para me abençoar e trazer luz por onde passar.<br>
-  Te estimo, te desejo, te busco, te habito e te contemplo.</p>
+  <p>
+    Um pedaço de paraíso deixado por Deus na Terra<br>
+    Para me abençoar e trazer luz por onde passar.<br>
+    Te estimo, te desejo, te busco, te habito e te contemplo.
+  </p>
 
-  <p>Minha vontade em você é castelar teu coração, solar o inverno,<br>
-  Constelar seu céu, nebular qualquer tristeza,<br>
-  Te causar o sentimento que você merece.</p>
+  <p>
+    Minha vontade em você é castelar teu coração, solar o inverno,<br>
+    Constelar seu céu e nebular qualquer tristeza,<br>
+    Te causar o sentimento que você merece<br>
+    Através de pontes de paciência e esperança<br>
+    Pois te entrego o meu querer<br>
+    Não em correntes, mas em escudo<br>
+    Não em fogo que queima, mas que ilumina,<br>
+    Por ter a vontade livre<br>
+    De proteger sua essência<br>
+    E que minha presença seja o espaço onde tua alma respira.</p>
+  </p>
 
-  <p>Meu coração pula todo dia,<br>
-  no ritmo dos passos da bailarina dentro dele.</p>
 
-  <p>Meu mar gravita teu lunar.<br>
-  Meu tempo se dilui no teu espaço.</p>
+  <p>Meu coração pula todo dia,<br> no ritmo dos passos da bailarina dentro dele.</p>
 
-  <p>Tua beleza define meu olhar.<br>
-  Minha bússola recalibra na geografia do teu corpo.</p>
+  <p>Meu mar gravita teu lunar,<br> meu tempo se dilui no teu espaço.</p>
+
+  <p>Tua beleza define meu olhar.<br> Minha bússola recalibra na geografia do teu corpo.</p>
 
   <p>Meu Sagrado dança, reverencia e comunga com teu Sagrado.</p>
+  <p>Saibas: a minha alma te escolhe e permanece.</p>
+  </p>
+<br>
+                                                  <p>Do seu Thiago chato.</p><br>
+  <p>Ps: Eu te amo com cada filamento de DNA meu. 💘</p>
+</div>
 
-  <p>Eu te amo com cada filamento de DNA meu <br>💖💖💖</p>
 
-  <p>Do seu nego que te gosta muito</p>
- </div>
-  
+<!-- Contêiner para os corações animados -->
+<div id="coracoes"></div>
+<script>// Mensagem inicial
+window.addEventListener('load', () => {
+  alert('Teimosa, não devia abrir isso. Mas já que abriu, espero que goste.💖');
+  iniciarCoracoes();
+  iniciarCronometro();
+});
 
-  <!-- Botão do presente misterioso -->
-  <button id="btn-presente" aria-label="Mostrar presente misterioso">🎁 Presente Misterioso</button>
+// Controle de música
+const btnMusica = document.getElementById('btn-musica');
+const musica = document.getElementById('musica');
 
-  <!-- Mensagem surpresa -->
-  <div id="mensagem-presente" aria-hidden="true">
-    <p>Agora olhe nos meus olhos e veja o que vou te dar</p>
-  </div>
+btnMusica.addEventListener('click', () => {
+  if (musica.paused) {
+    musica.play();
+    btnMusica.textContent = 'Pausar, nega!';
+    btnMusica.setAttribute('aria-pressed', 'true');
+  } else {
+    musica.pause();
+    btnMusica.textContent = 'Aperta, nega!';
+    btnMusica.setAttribute('aria-pressed', 'false');
+  }
+});
 
-  <!-- Contêiner para os corações animados -->
-  <div id="coracoes"></div>
-<script>
-  // Mensagem inicial
-  window.addEventListener('load', () => {
-    alert('Teimosa, não devia abrir isso. Mas já que abriu, espero que goste.💖');
-    iniciarCoracoes();
-    iniciarCronometro();
-  });
+// Coração pulsante e caixa do amor
+const btnCoracao = document.getElementById('btn-coracao');
+const caixaAmor = document.getElementById('caixa-amor');
+const btnFecharAmor = document.getElementById('fechar-amor');
+const btnMedidor = document.getElementById('btn-medidor');
+const barraAmorContainer = document.getElementById('barra-amor-container');
+const barraAmor = document.getElementById('barra-amor');
+const tempoBeijo = document.getElementById('tempo-beijo');
 
-  // Controle de música
-  const btnMusica = document.getElementById('btn-musica');
-  const musica = document.getElementById('musica');
+btnCoracao.addEventListener('click', () => {
+  caixaAmor.style.display = caixaAmor.style.display === 'flex' ? 'none' : 'flex';
+});
 
-  btnMusica.addEventListener('click', () => {
-    if (musica.paused) {
-      musica.play();
-      btnMusica.textContent = 'Pausar, nega!';
-      btnMusica.setAttribute('aria-pressed', 'true');
-    } else {
-      musica.pause();
-      btnMusica.textContent = 'Aperta, nega!';
-      btnMusica.setAttribute('aria-pressed', 'false');
-    }
-  });
+btnFecharAmor.addEventListener('click', () => {
+  caixaAmor.style.display = 'none';
+});
 
-  // Coração pulsante e caixa do amor
-  const btnCoracao = document.getElementById('btn-coracao');
-  const caixaAmor = document.getElementById('caixa-amor');
-  const btnFecharAmor = document.getElementById('fechar-amor');
-  const btnMedidor = document.getElementById('btn-medidor');
-  const barraAmorContainer = document.getElementById('barra-amor-container');
-  const barraAmor = document.getElementById('barra-amor');
-  const tempoBeijo = document.getElementById('tempo-beijo');
+// Medidor de amor só inicia ao clicar
+btnMedidor.addEventListener('click', () => {
+  barraAmorContainer.style.display = 'block';
+  animarBarraAmor();
+  btnMedidor.disabled = true;
+  btnMedidor.textContent = 'Te amo infinito! ❤️';
+});
 
-  btnCoracao.addEventListener('click', () => {
-    caixaAmor.style.display = caixaAmor.style.display === 'flex' ? 'none' : 'flex';
-  });
-
-  btnFecharAmor.addEventListener('click', () => {
-    caixaAmor.style.display = 'none';
-  });
-
-  // Medidor de amor só inicia ao clicar
-  btnMedidor.addEventListener('click', () => {
-    barraAmorContainer.style.display = 'block';
-    animarBarraAmor();
-    btnMedidor.disabled = true;
-    btnMedidor.textContent = 'Te amo infinito! ❤️';
-  });
-
-  // Função de animar barra de amor infinitamente
- function animarBarraAmor() {
+// Função de animar barra de amor infinitamente
+function animarBarraAmor() {
   const barraAmor = document.getElementById('barra-amor');
   let largura = 0;
   setInterval(() => {
@@ -427,45 +447,36 @@ button:hover {
   }, 100);
 }
 
-  // Cronômetro desde o beijo
-  const dataBeijo = new Date('2024-08-15T21:00:00');
+// Cronômetro desde o beijo
+const dataBeijo = new Date('2024-08-15T21:00:00');
 
-  function iniciarCronometro() {
-    setInterval(() => {
-      const agora = new Date();
-      let diff = Math.floor((agora - dataBeijo) / 1000);
+function iniciarCronometro() {
+  setInterval(() => {
+    const agora = new Date();
+    let diff = Math.floor((agora - dataBeijo) / 1000);
 
-      const dias = Math.floor(diff / 86400);
-      diff %= 86400;
-      const horas = Math.floor(diff / 3600);
-      diff %= 3600;
-      const minutos = Math.floor(diff / 60);
-      const segundos = diff % 60;
+    const dias = Math.floor(diff / 86400);
+    diff %= 86400;
+    const horas = Math.floor(diff / 3600);
+    diff %= 3600;
+    const minutos = Math.floor(diff / 60);
+    const segundos = diff % 60;
 
-      tempoBeijo.textContent = `${dias}d ${String(horas).padStart(2, '0')}h:${String(minutos).padStart(2, '0')}m:${String(segundos).padStart(2, '0')}s`;
-    }, 1000);
-  }
+    tempoBeijo.textContent = `${dias}d ${String(horas).padStart(2, '0')}h:${String(minutos).padStart(2, '0')}m:${String(segundos).padStart(2, '0')}s`;
+  }, 1000);
+}
 
-  // Carta virtual
-  const btnCartinha = document.getElementById('btn-cartinha');
-  const carta = document.getElementById('carta');
+// Carta virtual
+const btnCartinha = document.getElementById('btn-cartinha');
+const carta = document.getElementById('carta');
 
-  btnCartinha.addEventListener('click', () => {
-    carta.style.display = carta.style.display === 'block' ? 'none' : 'block';
-  });
+btnCartinha.addEventListener('click', () => {
+  carta.style.display = carta.style.display === 'block' ? 'none' : 'block';
+});
 
-  // Presente misterioso
-  const btnPresente = document.getElementById('btn-presente');
-  const mensagemPresente = document.getElementById('mensagem-presente');
 
-  btnPresente.addEventListener('click', () => {
-    mensagemPresente.style.display = 'block';
-    setTimeout(() => {
-      mensagemPresente.style.display = 'none';
-    }, 6000);
-  });
 
-  function criarCoracao() {
+function criarCoracao() {
   const coracao = document.createElement('div');
   coracao.classList.add('coração');
   coracao.textContent = '❤️';
@@ -482,21 +493,20 @@ button:hover {
 function iniciarCoracoes() {
   setInterval(criarCoracao, 150);
 }
- var senha = prompt("Digite a senha para acessar:");
-  if (senha !== "2025") {
-    alert("Senha incorreta!");
-    document.body.innerHTML = "";
-  }
-    const enterBtn = document.getElementById('enterBtn');
-    const welcomeScreen = document.getElementById('welcomeScreen');
-    const mainContent = document.getElementById('mainContent');
 
-    enterBtn.addEventListener('click', () => {
-      welcomeScreen.style.display = 'none';
-      mainContent.style.display = 'block';
-    }); 
+var senha = prompt("Digite a senha para acessar:");
+if (senha !== "2330") {
+  document.body.innerHTML = "";
+}
+
+const enterBtn = document.getElementById('enterBtn');
+const welcomeScreen = document.getElementById('welcomeScreen');
+const mainContent = document.getElementById('mainContent');
+
+enterBtn.addEventListener('click', () => {
+  welcomeScreen.style.display = 'none';
+  mainContent.style.display = 'block';
+});
 </script>
-
-
 </body>
 </html>
